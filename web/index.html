@@ -27,27 +27,7 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>my_crypto_wallet</title>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyD7rAbAyMnYvzp16Dl_DeTtxUM0bI23Um8",
-    authDomain: "my-crypto-wallet-2a062.firebaseapp.com",
-    projectId: "my-crypto-wallet-2a062",
-    storageBucket: "my-crypto-wallet-2a062.appspot.com",
-    messagingSenderId: "489102394933",
-    appId: "1:489102394933:web:862f978caa948f43e5537c"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -60,6 +40,27 @@
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7rAbAyMnYvzp16Dl_DeTtxUM0bI23Um8",
+    authDomain: "my-crypto-wallet-2a062.firebaseapp.com",
+    projectId: "my-crypto-wallet-2a062",
+    storageBucket: "my-crypto-wallet-2a062.appspot.com",
+    messagingSenderId: "489102394933",
+    appId: "1:489102394933:web:862f978caa948f43e5537c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
