@@ -14,7 +14,7 @@ Work yet to be done in the near future...
 - Separation of concerns by using State Management
 - Improve UI
 - Responsive / Adaptive design
-- PWA (was not created by default ???)
+- PWA (lighthouse performance error)
 
 This work was carried out within the scope of #30daysOfFlutter and inspired by [Bleyl Dev](https://www.youtube.com/channel/UCIV0tE4cC3Ufk44-KVZqv7w) work.
 
