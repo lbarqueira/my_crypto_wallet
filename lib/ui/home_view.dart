@@ -57,6 +57,7 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       body: Container(
+        padding: EdgeInsets.only(left: 8.0, right: 8.0),
         decoration: BoxDecoration(
           color: Colors.blue.shade100,
         ),
@@ -75,39 +76,41 @@ class _HomeViewState extends State<HomeView> {
                   child: CircularProgressIndicator(),
                 );
               }
-              return ListView(
-                children: snapshot.data.docs.map((document) {
-                  return Container(
-                    margin: EdgeInsets.only(top: 10),
-                    padding: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Colors.blue[900],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        Text(
-                          "Coin: ${document.id}",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                            "Price: ${getValue(document.id, document.data()['Amount'])}EUR",
-                            style: TextStyle(color: Colors.white)),
-                        IconButton(
-                          color: Colors.red,
-                          icon: Icon(Icons.delete),
-                          onPressed: () async {
-                            await FirestoreService().removeCoin(document.id);
-                          },
-                        ),
-                      ],
-                    ),
-                  );
-                }).toList(),
+              return Scrollbar(
+                child: ListView(
+                  children: snapshot.data.docs.map((document) {
+                    return Container(
+                      margin: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.blue[900],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text(
+                            "Coin: ${document.id}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                              "Price: ${getValue(document.id, document.data()['Amount'])}EUR",
+                              style: TextStyle(color: Colors.white)),
+                          IconButton(
+                            color: Colors.red,
+                            icon: Icon(Icons.delete),
+                            onPressed: () async {
+                              await FirestoreService().removeCoin(document.id);
+                            },
+                          ),
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                ),
               );
             },
           ),
